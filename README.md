@@ -70,19 +70,23 @@ Run the above crawler and check the catalog table created : dev_movies_imdb_movi
 ![image](https://github.com/user-attachments/assets/928a9a58-1add-4967-af54-f61990048ddb)
 
 S3 file as source:
+
 ![image](https://github.com/user-attachments/assets/0846d2d2-2e70-42aa-a757-b30713be66a5)
 
 Transform - Evaluate Data Quality:
+
 ![image](https://github.com/user-attachments/assets/2434658b-b7b0-4ddb-87ee-3c186cba924d)
 
 ![image](https://github.com/user-attachments/assets/f9fff4ba-25d3-4883-82dc-503e4bab7472)
 
 We’ll continue the job even if rules are failing for any record and publish the results in CloudWatch to let EventBridge match the failure pattern and later send SNS notification accordingly:
+
 ![image](https://github.com/user-attachments/assets/3b7e3b1d-9266-44c3-9c8f-535b86af9127)
 
 We need to create VPC endpoints for Glue and Cloudwatch (to keep cloudwatch and Glue both in the same VPC so that the data transfer will happen)
 
 Data quality outputs:
+
 ![image](https://github.com/user-attachments/assets/11a7d06d-1ecf-4490-bc9a-a892a76c53e4)
 
 Data quality results will go in ruleOutcomes node:
