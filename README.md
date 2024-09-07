@@ -89,15 +89,19 @@ Data quality results will go in ruleOutcomes node:
 ![image](https://github.com/user-attachments/assets/47b75b5b-4165-4390-819f-28742d04eaea)
 
 This is how the visual ETL would look:
+
 ![image](https://github.com/user-attachments/assets/b22df66b-eff5-4ad8-a3ca-b16b257792bf)
 
 Store this ruleOutcomes result in rule_outcome directory in S3:
+
 ![image](https://github.com/user-attachments/assets/9a7fcd3e-46f3-4c8c-945f-117e48568300)
 
 Conditional Router: Now the row level outcomes can be further divided as Failed_Records and Passed_Records(i.e., default_group)
+
 ![image](https://github.com/user-attachments/assets/d30ff90c-feb8-4b3a-a8b3-65bf18d97c12)
 
 Conditions for Failed_Records in the conditional router:
+
 ![image](https://github.com/user-attachments/assets/9ee90768-192b-49a0-a114-b48a56314a79)
 
 Keep these Failed_Records in bad_records directory of S3:
@@ -108,11 +112,26 @@ Now from the Passed_Records (i.e., default_group), drop the Drop the DataQuality
 
 ![image](https://github.com/user-attachments/assets/801fc02e-80c7-4375-ae8f-b6bd9bbee54b)
 
-Redshift table load
+Redshift table load :
+
 ![image](https://github.com/user-attachments/assets/5297f36b-5d84-4de9-af45-6b4a2b7f89fe)
+
 ![image](https://github.com/user-attachments/assets/3756bc68-540c-4c68-9c59-2075b814c30c)
 
 
 Note - S3 VPC endpoint is needed to be created to use this S3 directory for Glue
 
 Now run the Glue job and check the destination table contents in redshift:
+
+
+# Eventbridge
+
+Event Pattern:
+![image](https://github.com/user-attachments/assets/cc06ddc9-9f9d-4f69-9c5c-2cf3cf1bd538)
+
+Eventbridge rule will look like this:
+
+![image](https://github.com/user-attachments/assets/23ecb529-7bdd-43ef-9fe8-6a6e3b52e9c8)
+![image](https://github.com/user-attachments/assets/f3da7783-541e-46d1-8137-3ada6cf89047)
+
+
