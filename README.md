@@ -3,9 +3,9 @@
 Process and Ingest only the quality movie data in Redshift Data Warehouse
 
 # Tech Stack
-Extract:
+## Extract:
 
-## S3
+S3
 Glue Crawler
 Glue Catalog
 
